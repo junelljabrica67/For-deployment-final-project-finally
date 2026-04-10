@@ -1,0 +1,28 @@
+.footer {
+  padding: 3rem 0;
+  background: var(--panel-background);
+  border-top: 1px solid var(--border-color);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.contact-list {
+  list-style: none;
+  display: grid;
+  gap: 0.55rem;
+  color: var(--text-secondary);
+}
+
+.contact-list a {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}

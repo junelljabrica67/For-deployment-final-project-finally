@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PinoyTaste | Home</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./images/index/logo/logo_final.png"
+    />
+    <link rel="stylesheet" href="./bootstrap/bootstrap-icons.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <div class="web-container">
+      <header class="site-header">
+        <!-- Navigation bar for desktop and mobile -->
+        <nav class="container">
+          <a class="brand" href="./index.html">
+            <img
+              src="./images/index/logo/logo_final.png"
+              alt="PinoyTaste logo"
+            />
+            <div class="brand-copy">
+              <small>Filipino Flavors</small>
+              <h1>PinoyTaste</h1>
+            </div>
+          </a>
+          <div class="nav-right" id="navMenu">
+            <div class="nav-links">
+              <ul>
+                <li><a class="active" href="./index.html">Home</a></li>
+                <li><a href="./recipes.html">Recipes</a></li>
+                <li><a href="./kitchen-gear.html">Kitchen Gear</a></li>
+                <li><a href="./about.html">About</a></li>
+              </ul>
+            </div>
+
+            <!-- Controller for the theme-switching -->
+            <div class="theme-switch">
+              <button type="button" id="theme-toggle">
+                <i class="bi bi-moon-stars"></i>
+              </button>
+              <span id="theme-text">Dark mode</span>
+            </div>
+          </div>
+
+          <!-- Nav menu for mobile -->
+          <button class="hamburger" id="menu" type="button">
+            <i class="bi bi-list"></i>
+          </button>
+        </nav>
+      </header>
+
+      <!-- Content of the index page with showcase of foods -->
+      <section class="page-content">
+        <section class="food-banner" id="food-banner">
+          <div class="food-video-wrap">
+            <video
+              id="food-banner-video"
+              src="./video/home page banner/food_background.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+            ></video>
+          </div>
+          <!-- Main banner includes the welcoming to the page -->
+          <div class="food-overlay container">
+            <div class="food-copy">
+              <span class="food-logo">PINOYTASTE JOURNAL</span>
+              <h2>FILIPINO FOOD</h2>
+              <p class="food-subtitle">Savory. Tangy. Comforting.</p>
+              <div class="food-copy-spacer"> </div>
+              <p class="food-description">
+                A warm story of home-cooked flavors from raw ingredients to the
+                final plate.
+              </p>
+              <div class="food-actions">
+                <a href="./recipes.html" class="food-btn food-btn-outline"
+                  >VIEW RECIPE</a
+                >
+                <a href="#motto-section" class="food-btn food-btn-fill"
+                  >VIEW MOTTO</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Motto Section of the Food Blog XD -->
+        <section class="motto-section" id="motto-section">
+          <div class="container">
+            <div class="border-above"></div>
+            <h3>“Great food tells the story of home, family, and heart.”</h3>
+            <p>
+              PinoyTaste celebrates Filipino kitchen traditions with modern
+              clarity and everyday accessibility.
+            </p>
+            <div class="border"></div>
+          </div>
+        </section>
+
+        <!-- The Section where the featured foods are found XD -->
+        <section class="content-section">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <span class="section-kicker">Food Collection</span>
+                <h3>Featured Dishes</h3>
+              </div>
+            </div>
+            <div class="food-collection">
+              <figure class="showcase-item">
+                <img src="./images/recipes/adobo.jpeg" alt="Chicken Adobo" />
+                <figcaption class="showcase-name">Chicken Adobo</figcaption>
+              </figure>
+              <figure class="showcase-item">
+                <img src="./images/recipes/sinigang.jpeg" alt="Sinigang" />
+                <figcaption class="showcase-name">Sinigang na Baboy</figcaption>
+              </figure>
+              <figure class="showcase-item">
+                <img src="./images/recipes/tinola.jpeg" alt="Tinola" />
+                <figcaption class="showcase-name">Tinolang Manok</figcaption>
+              </figure>
+              <figure class="showcase-item">
+                <img src="./images/recipes/karekare.jpeg" alt="Kare-Kare" />
+                <figcaption class="showcase-name">Kare-Kare</figcaption>
+              </figure>
+              <figure class="showcase-item">
+                <img
+                  src="./images/recipes/bicol_express.jpeg"
+                  alt="Bicol Express"
+                />
+                <figcaption class="showcase-name">Bicol Express</figcaption>
+              </figure>
+              <figure class="showcase-item">
+                <img src="./images/recipes/tapsilog.jpeg" alt="Tapsilog" />
+                <figcaption class="showcase-name">Tapsilog</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+        <!-- This section is for kitchen gear showcase XD -->
+        <section class="content-section">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <span class="section-kicker">Kitchen Gear Showcase</span>
+                <h3>Tools Behind Every Flavor</h3>
+              </div>
+            </div>
+            <div class="kitchen-collection">
+              <figure class="showcase-item">
+                <img src="./images/kitchen gear/knife.jpeg" alt="Knife" />
+                <figcaption class="showcase-name">Chef Knife</figcaption>
+              </figure>
+              <figure class="showcase-item">
+                <img src="./images/kitchen gear/wok.jpeg" alt="Wok" />
+                <figcaption class="showcase-name">Wok</figcaption>
+              </figure>
+              <figure class="showcase-item">
+                <img
+                  src="./images/kitchen gear/frying_pan.jpeg"
+                  alt="Frying Pan"
+                />
+                <figcaption class="showcase-name">Frying Pan</figcaption>
+              </figure>
+              <figure class="showcase-item">
+                <img
+                  src="./images/kitchen gear/cutting_board.jpeg"
+                  alt="Cutting Board"
+                />
+                <figcaption class="showcase-name">Cutting Board</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <!-- Last quote of the website, very inspiring XD -->
+        <section class="ending-quote">
+          <div class="container">
+            <div class="border-above"></div>
+            <blockquote>
+              “Cook with patience, serve with love, and every meal becomes a
+              memory.”
+            </blockquote>
+          </div>
+          <div class="border"></div>
+        </section>
+      </section>
+
+      <!-- Footer: Contains contacts, links, something about the website... -->
+      <footer class="footer">
+        <div class="container footer-grid">
+          <div>
+            <h4>PinoyTaste</h4>
+            <p class="section-intro">
+              Premium Filipino food blog stories, recipes, and kitchen
+              inspiration.
+            </p>
+          </div>
+          <div>
+            <h4>Quick Links</h4>
+            <ul class="contact-list">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./recipes.html">Recipes</a></li>
+              <li><a href="./kitchen-gear.html">Kitchen Gear</a></li>
+              <li><a href="./about.html">About</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <ul class="contact-list">
+              <li>
+                <i class="bi bi-envelope-fill"></i> pinoytaste.jabrica@gmail.com
+              </li>
+              <li><i class="bi bi-instagram"></i> @pinoytaste</li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="./js/jquery-4.0.0.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/global.js"></script>
+  </body>
+</html>

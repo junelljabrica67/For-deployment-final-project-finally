@@ -1,0 +1,221 @@
+.food-banner {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #120d0a;
+}
+
+.food-video-wrap {
+  position: absolute;
+  inset: 0;
+}
+
+.food-video-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(13, 7, 4, 0.78),
+    rgba(13, 7, 4, 0.4) 40%,
+    rgba(13, 7, 4, 0.65)
+  );
+}
+
+#food-banner-video {
+  width: 100%;
+  height: 98%;
+  object-fit: cover;
+}
+
+.food-overlay {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.food-copy {
+  max-width: 900px;
+  color: #fff3e7;
+  display: grid;
+  gap: 0.7rem;
+  text-align: center;
+}
+.food-copy-spacer{
+  visibility: hidden;
+  min-width: 16rem;
+  min-height: 31rem ;
+}
+
+.food-logo {
+  letter-spacing: 0.18em;
+  font-size: 0.86rem;
+  color: #ffd9b0;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.65);
+}
+
+.food-copy h2 {
+  font-size: clamp(3rem, 8vw, 7rem);
+  letter-spacing: 0.06em;
+  color: #fffaf4;
+  text-shadow:
+    0 2px 0 #7a3d1a,
+    0 5px 0 #5f2c10,
+    0 14px 22px rgba(0, 0, 0, 0.62);
+}
+
+.food-subtitle,
+.food-description {
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.74);
+}
+
+.food-subtitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.food-description {
+  font-size: 1.05rem;
+  color: #fff8f0;
+  background: rgba(11, 8, 6, 0.55);
+  border: 1px solid rgba(255, 233, 207, 0.45);
+  border-radius: 14px;
+  padding: 0.95rem 1rem;
+}
+
+.food-actions {
+  display: flex;
+  gap: 0.7rem;
+  justify-content: center;
+}
+
+.food-btn {
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.8rem 1.2rem;
+  font-weight: 700;
+}
+
+.food-btn-outline {
+  border: 1px solid rgba(255, 237, 223, 0.72);
+  color: #fff;
+}
+
+.food-btn-fill {
+  background: #ffe4cb;
+  color: #2f170b;
+}
+
+.motto-section,
+.ending-quote {
+  text-align: center;
+  padding: 3.5rem 0;
+}
+
+.motto-section h3,
+.ending-quote blockquote {
+  font-size: clamp(1.4rem, 3.5vw, 2.5rem);
+}
+
+.food-collection,
+.kitchen-collection {
+  display: grid;
+  gap: 1rem;
+}
+
+.food-collection {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.kitchen-collection {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.showcase-item {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.food-collection img,
+.kitchen-collection img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.showcase-name {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translate(-50%, 20px);
+  width: calc(100% - 24px);
+  text-align: center;
+  background: linear-gradient(135deg, rgba(23, 15, 8, 0.9), rgba(72, 37, 19, 0.88));
+  color: #fff4e8;
+  padding: 0.55rem 0.8rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  opacity: 0;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.showcase-item:hover img {
+  transform: scale(1.08);
+  filter: brightness(0.64);
+}
+
+.showcase-item:hover .showcase-name {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+.border{
+  margin: 2rem 22rem 2rem 22rem;
+  padding: 0.2rem;
+  background-color: var(--brand-accent);
+  border-radius: 100rem;
+}
+.border-above{
+  margin: 2rem 10rem 2rem 10rem;
+  padding: 0.2rem;
+  background-color: var(--brand-accent);
+  border-radius: 100rem;
+}
+@media (max-width: 1280px) {
+  .food-collection {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .food-actions{
+    margin: 1rem 10rem 0 10rem;
+  }
+
+  .kitchen-collection {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .food-collection,
+  .kitchen-collection {
+    grid-template-columns: 1fr;
+  }
+  .food-copy-spacer{
+    display: none;
+  }
+
+  .food-actions {
+    flex-direction: column;
+  }
+  .border{
+    margin: 2rem 12rem 2rem 12rem;
+  }
+}
