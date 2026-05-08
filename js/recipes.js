@@ -218,4 +218,88 @@ $(function () {
       itemDetailsDialog.removeClass("show");
     }
   });
+
+  /*
+    SEARCH FEATURE
+    Listens to what the user types in the search box.
+    For every keystroke, it checks each recipe card name against the typed text.
+    Cards that match stay visible; cards that do not match get hidden.
+    If no cards match at all, a "no results" message appears instead.
+  */
+
+  /* Grab the search input box so we can read its value when the user types */
+  var searchInput = $("#recipe-search-input");
+
+  /* Grab the wrapper div so we can toggle the "has-text" class on it */
+  var searchWrap = $(".search-bar-wrap");
+
+  /* Grab the X button that clears the search box */
+  var clearBtn = $("#recipe-search-clear");
+
+  /* Grab the empty-state message block shown when nothing matches */
+  var emptyMsg = $(".search-empty-msg");
+
+  /*
+    Runs every time the user presses a key inside the search box.
+    It reads the current text, trims extra spaces, and lowercases it
+    so the comparison is not case-sensitive (e.g. "adobo" matches "Adobo").
+  */
+  searchInput.on("input", function () {
+    var typed = $(this).val().trim().toLowerCase();
+
+    /*
+      Toggle the "has-text" class on the wrapper.
+      When the class is present, CSS shows the clear (X) button.
+    */
+    if (typed.length > 0) {
+      searchWrap.addClass("has-text");
+    } else {
+      searchWrap.removeClass("has-text");
+    }
+
+    /* Keep track of how many cards are still visible after filtering */
+    var visibleCount = 0;
+
+    /*
+      Loop through every recipe card on the page.
+      Read the name text inside each card, lowercase it, then check
+      if it contains the text the user typed.
+    */
+    $(".recipe-card").each(function () {
+      var cardName = $(this).find(".recipe-name").text().toLowerCase();
+
+      if (typed === "" || cardName.indexOf(typed) !== -1) {
+        /* The card name matches — make it visible */
+        $(this).show();
+        visibleCount++;
+      } else {
+        /* The card name does not match — hide it */
+        $(this).hide();
+      }
+    });
+
+    /*
+      After checking all cards, decide whether to show the "no results" message.
+      If visibleCount is 0 and the user has actually typed something, show it.
+      Otherwise hide it.
+    */
+    if (visibleCount === 0 && typed.length > 0) {
+      emptyMsg.addClass("show");
+    } else {
+      emptyMsg.removeClass("show");
+    }
+  });
+
+  /*
+    Runs when the user clicks the X (clear) button.
+    Clears the text box, removes the "has-text" class so the button hides again,
+    makes all recipe cards visible again, and hides the empty message.
+  */
+  clearBtn.on("click", function () {
+    searchInput.val("");
+    searchWrap.removeClass("has-text");
+    $(".recipe-card").show();
+    emptyMsg.removeClass("show");
+    searchInput.focus();
+  });
 });

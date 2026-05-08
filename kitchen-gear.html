@@ -63,6 +63,27 @@
             </div>
           </div>
 
+          <!-- 
+            SEARCH BAR
+            This block adds a search box above the kitchen gear grid.
+            The input fires a JavaScript event on every keystroke.
+            The clear button (X) appears only when text is present — controlled by CSS.
+            The "no results" message block starts hidden and becomes visible through JavaScript
+            when zero gear cards match what the user typed.
+          -->
+          <div class="search-bar-wrap">
+            <input
+              type="text"
+              id="kitchen-search-input"
+              class="search-input"
+              placeholder="Search kitchen tools..."
+              autocomplete="off"
+            />
+            <button type="button" id="kitchen-search-clear" class="search-clear-btn" aria-label="Clear search">
+              <i class="bi bi-x-lg"></i>
+            </button>
+          </div>
+
           <div class="kitchen-grid">
             <article class="kitchen-gear-card" id="kitchen-gear-card-1">
               <div class="kitchen-gear-image-wrap">
@@ -162,6 +183,18 @@
               </div>
               <h4 class="kitchen-gear-name">Peeler</h4>
             </article>
+
+            <!--
+              NO RESULTS MESSAGE
+              This block is always in the page but starts hidden (no "show" class).
+              JavaScript adds the "show" class when zero cards match the search,
+              making this message visible. It is removed from the grid flow when hidden.
+            -->
+            <div class="search-empty-msg" id="kitchen-empty-msg">
+              <div class="empty-icon">🔍</div>
+              <p>No tools found</p>
+              <small>Try a different name like "Knife" or "Wok"</small>
+            </div>
           </div>
         </section>
       </section>

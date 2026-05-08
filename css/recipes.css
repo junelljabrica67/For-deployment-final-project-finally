@@ -2,6 +2,98 @@
   padding: 2rem 0 3rem;
 }
 
+/* 
+  Search bar wrapper — sits between the section heading and the recipe grid.
+  Uses flexbox so the input and clear button line up side by side.
+*/
+.search-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+/* 
+  The text box where the user types their search.
+  Takes up all available space thanks to flex: 1.
+*/
+.search-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: var(--panel-background);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+/* Highlights the border when the user clicks into the box */
+.search-input:focus {
+  border-color: var(--brand-accent);
+}
+
+/*
+  The "X" clear button beside the search box.
+  Hidden by default — only shows up when the user has typed something.
+*/
+.search-clear-btn {
+  display: none;
+  border: none;
+  background: var(--panel-background);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+/* Makes the button visible when the parent wrapper has the "has-text" class */
+.search-bar-wrap.has-text .search-clear-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+  The "no results" message block shown when no cards match the search.
+  Hidden by default and shown through JavaScript.
+*/
+.search-empty-msg {
+  display: none;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-secondary);
+  grid-column: 1 / -1;
+}
+
+/* Shows the empty message when the "show" class is added by JavaScript */
+.search-empty-msg.show {
+  display: block;
+}
+
+.search-empty-msg .empty-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.search-empty-msg p {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.search-empty-msg small {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
 .recipe-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
